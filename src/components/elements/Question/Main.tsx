@@ -13,7 +13,9 @@ const Main: React.VFC<Question> = ({ questions }) => {
       {questions.map((question, index) => {
         return (
           <ListItem key={index}>
-            Q{index + 1}. {question}
+            <h3>
+              Q{index + 1}. {question}
+            </h3>
           </ListItem>
         )
       })}

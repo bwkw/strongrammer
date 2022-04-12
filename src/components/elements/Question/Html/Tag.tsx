@@ -10,7 +10,6 @@ const Tag: React.VFC = () => {
 
   return (
     <>
-      <h1>タグ編</h1>
       <QuestionMain questions={questions} />
     </>
   )
