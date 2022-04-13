@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 import { Link } from 'react-router-dom'
 
 import Button from '@mui/material/Button'
@@ -8,7 +8,7 @@ type Link = {
   letter: string
 }
 
-const LinkButton: React.VFC<Link> = ({ url, letter }) => {
+const LinkButton: VFC<Link> = ({ url, letter }) => {
   return (
     <Button variant="outlined" color="primary" component={Link} to={url}>
       {letter}

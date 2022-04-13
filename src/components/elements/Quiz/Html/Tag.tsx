@@ -1,9 +1,10 @@
+import { VFC } from 'react'
 import Grid from '@mui/material/Grid'
 
 import QuestionHtmlTag from 'components/elements/Question/Html/Tag'
 import AnswerHtmlTag from 'components/elements/Answer/Html/Tag'
 
-const Tag: React.VFC = () => {
+const Tag: VFC = () => {
   return (
     <>
       <Grid item container xs={12}>

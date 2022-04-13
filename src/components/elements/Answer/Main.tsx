@@ -1,10 +1,10 @@
-import React from 'react'
+import { VFC } from 'react'
 
 type AnswerProps = {
   answers: string[]
 }
 
-const Main: React.VFC<AnswerProps> = ({ answers }) => {
+const Main: VFC<AnswerProps> = ({ answers }) => {
   return (
     <>
       {answers.map((answer) => {

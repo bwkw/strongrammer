@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -7,7 +7,7 @@ type QuestionProps = {
   questions: string[]
 }
 
-const Main: React.VFC<QuestionProps> = ({ questions }) => {
+const Main: VFC<QuestionProps> = ({ questions }) => {
   return (
     <List>
       {questions.map((question, index) => {

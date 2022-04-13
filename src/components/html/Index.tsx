@@ -1,10 +1,10 @@
-import React from 'react'
+import { VFC } from 'react'
 
 import Grid from '@mui/material/Grid'
 
 import LinkButton from 'components/elements/Button/Link'
 
-const Index: React.VFC = () => {
+const Index: VFC = () => {
   return (
     <Grid item container xs={12}>
       <Grid item xs={1} />
