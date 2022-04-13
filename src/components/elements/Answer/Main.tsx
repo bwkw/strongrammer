@@ -8,6 +8,7 @@ type AnswerProps = {
 
 const Main: VFC<AnswerProps> = ({ answers }) => {
   const onDragEnd = () => {}
+
   return (
     <>
       <DragDropContext onDragEnd={onDragEnd}>
