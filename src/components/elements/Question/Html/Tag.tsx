@@ -10,7 +10,7 @@ const Tag: React.VFC = () => {
 
   return (
     <>
-      <QuestionMain questions={questions} />
+      <QuestionMain questions={questions}></QuestionMain>
     </>
   )
 }

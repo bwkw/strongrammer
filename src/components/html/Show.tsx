@@ -6,7 +6,7 @@ import QuizHtmlTag from 'components/elements/Quiz/Html/Tag'
 const Show: React.VFC = () => {
   const { category } = useParams<{ category: string }>()
 
-  return <>{category == 'tag' && <QuizHtmlTag />}</>
+  return <>{category === 'tag' && <QuizHtmlTag />}</>
 }
 
 export default Show

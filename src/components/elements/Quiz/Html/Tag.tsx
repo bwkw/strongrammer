@@ -12,10 +12,11 @@ const Tag: React.VFC = () => {
       </Grid>
       <Grid item container xs={12}>
         <Grid item xs={1} />
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <QuestionHtmlTag />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}></Grid>
+        <Grid item xs={3}>
           <AnswerHtmlTag />
         </Grid>
       </Grid>
