@@ -1,6 +1,8 @@
 import { VFC } from 'react'
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
 
 type AnswerProps = {
   answers: string[]
@@ -21,7 +23,7 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="dropList">
           {(provided) => (
-            <ul {...provided.droppableProps} ref={provided.innerRef}>
+            <List className="droplist" {...provided.droppableProps} ref={provided.innerRef}>
               {answers.map((answer, index) => (
                 <Draggable
                   draggableId={String(index)}
@@ -29,40 +31,41 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
                   key={index}
                 >
                   {(provided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
+                    <ListItem key={index}>
                       <div
-                        style={{
-                          position: 'relative',
-                          borderRadius: 4,
-                          width: '100px',
-                          height: '60px',
-                          border: '1px solid gray',
-                          margin: '0 0 25px 0',
-                          boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
-                        }}
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
                       >
                         <div
                           style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            userSelect: 'none',
+                            position: 'relative',
+                            borderRadius: 10,
+                            width: '100px',
+                            height: '60px',
+                            border: '1px solid gray',
+                            boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
                           }}
                         >
-                          {answer}
+                          <div
+                            style={{
+                              position: 'absolute',
+                              top: '50%',
+                              left: '50%',
+                              transform: 'translate(-50%, -50%)',
+                              userSelect: 'none',
+                            }}
+                          >
+                            {answer}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </ListItem>
                   )}
                 </Draggable>
               ))}
               {provided.placeholder}
-            </ul>
+            </List>
           )}
         </Droppable>
       </DragDropContext>
