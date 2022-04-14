@@ -5,8 +5,8 @@ import { Button } from '@mui/material'
 import { Box } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 
-import QuestionHtmlTag from 'components/elements/Question/Html/Tag'
-import AnswerHtmlTag from 'components/elements/Answer/Html/Tag'
+import QuestionHtmlTag from 'components/elements/Question/Html/tag'
+import AnswerHtmlTag from 'components/elements/Answer/Html/tag'
 
 const Tag: VFC = () => {
   return (

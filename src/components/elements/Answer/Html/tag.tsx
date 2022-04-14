@@ -1,7 +1,6 @@
 import { VFC, useState } from 'react'
 
-import AnswerMain from 'components/elements/Answer/Main'
-
+import AnswerMain from 'components/elements/Answer/main'
 import shuffleArray from 'components/elements/Format/shuffleArray'
 
 const Tag: VFC = () => {

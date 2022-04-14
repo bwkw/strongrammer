@@ -1,8 +1,8 @@
-import React from 'react'
+import { VFC } from 'react'
 
-import QuestionMain from 'components/elements/Question/Main'
+import QuestionMain from 'components/elements/Question/main'
 
-const Tag: React.VFC = () => {
+const Tag: VFC = () => {
   const questions: string[] = [
     '見出し用のタグは？',
     '段落を指定するためのタグは？',
