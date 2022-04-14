@@ -4,10 +4,17 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 type AnswerProps = {
   answers: string[]
+  setAnswers: any
 }
 
-const Main: VFC<AnswerProps> = ({ answers }) => {
-  const onDragEnd = () => {}
+const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
+  const onDragEnd = (result: any) => {
+    const items = Array.from(answers)
+    const [reorderedItem] = items.splice(result.source.index, 1)
+    items.splice(result.destination.index, 0, reorderedItem)
+
+    setAnswers(items)
+  }
 
   return (
     <>
@@ -23,33 +30,37 @@ const Main: VFC<AnswerProps> = ({ answers }) => {
                 >
                   {(provided) => (
                     <div
-                      style={{
-                        position: 'relative',
-                        borderRadius: 4,
-                        width: '100px',
-                        height: '60px',
-                        border: '1px solid gray',
-                        margin: '18px 0px',
-                        boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
-                      }}
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                     >
-                      <div
+                      <ul
                         style={{
-                          position: 'absolute',
-                          top: '50%',
-                          left: '50%',
-                          transform: 'translate(-50%, -50%)',
+                          position: 'relative',
+                          borderRadius: 4,
+                          width: '100px',
+                          height: '60px',
+                          border: '1px solid gray',
+                          margin: '18px 0px',
+                          boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
                         }}
                       >
-                        {answer}
-                      </div>
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                          }}
+                        >
+                          {answer}
+                        </div>
+                      </ul>
                     </div>
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </div>
           )}
         </Droppable>
