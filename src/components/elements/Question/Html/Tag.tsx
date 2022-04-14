@@ -6,6 +6,7 @@ const Tag: React.VFC = () => {
   const questions: string[] = [
     '見出し用のタグは？',
     '段落を指定するためのタグは？',
+    'リンクを作成するためのタグは？'
   ]
 
   return (
