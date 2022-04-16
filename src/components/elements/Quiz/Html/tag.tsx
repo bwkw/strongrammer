@@ -6,8 +6,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import Grid from '@mui/material/Grid'
 import Swal from 'sweetalert2'
 
-import AnswerHtmlTag from 'components/elements/Answer/Html/tag'
-import QuestionHtmlTag from 'components/elements/Question/Html/tag'
+import AnswerMain from 'components/elements/Answer/main'
+import QuestionMain from 'components/elements/Question/main'
 import QuizMain from 'components/elements/Quiz/main'
 import shuffleArray from 'components/elements/Format/shuffleArray'
 
@@ -16,18 +16,24 @@ const Tag: VFC = () => {
     shuffleArray(['<h1>', '<p>', '<a>']),
   )
 
+  const questions: string[] = [
+    '見出し用のタグは？',
+    '段落を指定するためのタグは？',
+    'リンクを作成するためのタグは？',
+  ]
+
   const checkCorrectWrong = (): void => {
     if (JSON.stringify(answers) === '["<h1>","<p>","<a>"]') {
       Swal.fire({
         icon: 'success',
-        title: 'You are Correct!',
+        title: 'You are Correct !',
         showConfirmButton: false,
         timer: 1500,
       })
     } else {
       Swal.fire({
         icon: 'error',
-        title: 'You are Wrong!',
+        title: 'You are Wrong !',
         showConfirmButton: false,
         timer: 1500,
       })
@@ -38,8 +44,8 @@ const Tag: VFC = () => {
     <>
       <QuizMain
         title="タグ"
-        question={<QuestionHtmlTag />}
-        answer={<AnswerHtmlTag answers={answers} setAnswers={setAnswers} />}
+        question={<QuestionMain questions={questions} />}
+        answer={<AnswerMain answers={answers} setAnswers={setAnswers} />}
       />
       <Box mt={5} />
       <Grid item container xs={12}>
