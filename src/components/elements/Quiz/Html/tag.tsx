@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid'
 import Swal from 'sweetalert2'
 
 import AnswerMain from 'components/elements/Answer/main'
+import BackButton from 'components/elements/Button/back'
 import QuestionMain from 'components/elements/Question/main'
 import QuizMain from 'components/elements/Quiz/main'
 import shuffleArray from 'components/elements/Format/shuffleArray'
@@ -42,6 +43,7 @@ const Tag: VFC = () => {
 
   return (
     <>
+      <BackButton url={'/html'} />
       <QuizMain
         title="タグ"
         question={<QuestionMain questions={questions} />}
@@ -51,7 +53,6 @@ const Tag: VFC = () => {
       <Grid item container xs={12}>
         <Grid item xs={5} />
         <Button
-          color="primary"
           size="large"
           startIcon={<CheckCircleIcon />}
           onClick={checkCorrectWrong}
