@@ -10,7 +10,7 @@ type LinkButtonProps = {
 
 const LinkButton: VFC<LinkButtonProps> = ({ url, letter }) => {
   return (
-    <Button variant="outlined" color="primary" component={Link} to={url}>
+    <Button variant={'outlined'} color={'primary'} component={Link} to={url}>
       {letter}
     </Button>
   )

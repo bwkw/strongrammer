@@ -53,7 +53,8 @@ const Tag: VFC = () => {
       <Grid item container xs={12}>
         <Grid item xs={5} />
         <Button
-          size="large"
+          color={'warning'}
+          size={'large'}
           startIcon={<CheckCircleIcon />}
           onClick={checkCorrectWrong}
         >

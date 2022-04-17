@@ -12,6 +12,7 @@ const BackButton: VFC<BackButtonProps> = ({ url }) => {
   return (
     <>
       <Button
+        color={'secondary'}
         component={Link}
         to={url}
         startIcon={<ArrowBackIcon />}
