@@ -23,7 +23,11 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="dropList">
           {(provided) => (
-            <List className="droplist" {...provided.droppableProps} ref={provided.innerRef}>
+            <List
+              className="droplist"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
               {answers.map((answer, index) => (
                 <Draggable
                   draggableId={String(index)}
@@ -31,12 +35,12 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
                   key={index}
                 >
                   {(provided) => (
-                    <ListItem key={index}>
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                      >
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <ListItem key={index}>
                         <div
                           style={{
                             position: 'relative',
@@ -59,8 +63,8 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
                             {answer}
                           </div>
                         </div>
-                      </div>
-                    </ListItem>
+                      </ListItem>
+                    </div>
                   )}
                 </Draggable>
               ))}
