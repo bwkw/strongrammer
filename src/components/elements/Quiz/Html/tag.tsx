@@ -15,8 +15,10 @@ const Tag: VFC = () => {
     '見出し用のタグは？',
     '段落を指定するためのタグは？',
     'リンクを作成するためのタグは？',
+    '指定した文書を参照するタグは？',
+    '画像を貼り付ける際に使用するタグは？',
   ]
-  const correctAnswers = ['<h1>', '<p>', '<a>']
+  const correctAnswers = ['<h1>', '<p>', '<a>', '<link>', '<img>']
   const [answers, setAnswers] = useState<string[]>(
     shuffleArray(correctAnswers.concat()),
   )
