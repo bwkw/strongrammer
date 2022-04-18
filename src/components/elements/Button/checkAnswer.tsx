@@ -6,12 +6,12 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import checkCorrectWrong from 'components/elements/Answer/checkCorrectWrong'
 
 type CheckAnswerProps = {
-  answers: string[]
+  yourAnswers: string[]
   correctAnswers: string[]
 }
 
 const CheckAnswerButton: VFC<CheckAnswerProps> = ({
-  answers,
+  yourAnswers,
   correctAnswers,
 }) => {
   return (
@@ -20,7 +20,8 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         color={'warning'}
         size={'large'}
         startIcon={<CheckCircleIcon />}
-        onClick={() => checkCorrectWrong(answers, correctAnswers)}
+        style={{ textTransform: 'none' }}
+        onClick={() => checkCorrectWrong(yourAnswers, correctAnswers)}
       >
         答え合わせ
       </Button>

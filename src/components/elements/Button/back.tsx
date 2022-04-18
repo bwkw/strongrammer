@@ -16,6 +16,7 @@ const BackButton: VFC<BackButtonProps> = ({ url }) => {
         component={Link}
         to={url}
         startIcon={<ArrowBackIcon />}
+        style={{ textTransform: 'none' }}
       >
         戻る
       </Button>
