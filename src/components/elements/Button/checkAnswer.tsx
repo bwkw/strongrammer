@@ -2,8 +2,7 @@ import { VFC } from 'react'
 
 import Button from '@mui/material/Button'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-
-import checkCorrectWrong from 'components/elements/Answer/checkCorrectWrong'
+import Swal from 'sweetalert2'
 
 type CheckAnswerProps = {
   yourAnswers: string[]
@@ -14,6 +13,24 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
   yourAnswers,
   correctAnswers,
 }) => {
+  const checkCorrectWrong = (): void => {
+    if (JSON.stringify(yourAnswers) === JSON.stringify(correctAnswers)) {
+      Swal.fire({
+        icon: 'success',
+        title: 'You are Correct !',
+        showConfirmButton: false,
+        timer: 1500,
+      })
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'You are Wrong !',
+        showConfirmButton: false,
+        timer: 1500,
+      })
+    }
+  }
+
   return (
     <>
       <Button
@@ -21,7 +38,7 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         size={'large'}
         startIcon={<CheckCircleIcon />}
         style={{ textTransform: 'none' }}
-        onClick={() => checkCorrectWrong(yourAnswers, correctAnswers)}
+        onClick={checkCorrectWrong}
       >
         答え合わせ
       </Button>
