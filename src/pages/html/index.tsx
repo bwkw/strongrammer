@@ -2,8 +2,8 @@ import { VFC } from 'react'
 
 import Grid from '@mui/material/Grid'
 
-import BackButton from 'components/elements/Button/back'
-import LinkButton from 'components/elements/Button/link'
+import BackButton from 'components/Button/back'
+import LinkButton from 'components/Button/link'
 
 const Index: VFC = () => {
   return (

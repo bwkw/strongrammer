@@ -1,7 +1,7 @@
 import { VFC, useState } from 'react'
 
-import QuizMain from 'components/elements/Quiz/main'
-import shuffleArray from 'components/elements/Format/shuffleArray'
+import QuizMain from 'components/Quiz/main'
+import shuffleArray from 'components/Format/shuffleArray'
 
 const Input: VFC = () => {
   const questions: string[] = [

@@ -3,10 +3,10 @@ import { VFC } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
-import AnswerMain from 'components/elements/Answer/main'
-import BackButton from 'components/elements/Button/back'
-import CheckAnswerButton from 'components/elements/Button/checkAnswer'
-import QuestionMain from 'components/elements/Question/main'
+import AnswerMain from 'components/Answer/main'
+import BackButton from 'components/Button/back'
+import CheckAnswerButton from 'components/Button/checkAnswer'
+import QuestionMain from 'components/Question/main'
 
 type QuizProps = {
   title: string
