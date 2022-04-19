@@ -37,7 +37,8 @@ const Main: VFC<QuizProps> = ({
         <Grid item xs={7}>
           <QuestionMain questions={questions} />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={1} />
+        <Grid item xs={2}>
           <AnswerMain answers={answers} setAnswers={setAnswers} />
         </Grid>
       </Grid>

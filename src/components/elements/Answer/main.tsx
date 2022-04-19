@@ -46,7 +46,7 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
                             position: 'relative',
                             borderRadius: 10,
                             width: '100px',
-                            height: '60px',
+                            height: '63px',
                             border: '1px solid gray',
                             boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
                           }}
