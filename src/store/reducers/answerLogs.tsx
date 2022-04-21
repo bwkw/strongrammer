@@ -1,10 +1,12 @@
 import { ADD_ANSWER_LOG } from 'store/actions/answerLogs'
 
-type StateType = { category: string; correct_wrong_judgement: boolean }
-type ActionType = {
-  type: typeof ADD_ANSWER_LOG
+type StateType = {
   category: string
-  correct_wrong_judgement: boolean
+  correctWrongJudgement: '○' | '×'
+  dateTime: Date
+}
+type ActionType = StateType & {
+  type: typeof ADD_ANSWER_LOG
 }
 
 const answerLogs = (
@@ -15,7 +17,8 @@ const answerLogs = (
     case ADD_ANSWER_LOG:
       const answerLog = {
         category: action.category,
-        correct_wrong_judgement: action.correct_wrong_judgement,
+        correctWrongJudgement: action.correctWrongJudgement,
+        dateTime: action.dateTime,
       }
       return [answerLog, ...state]
     default:
