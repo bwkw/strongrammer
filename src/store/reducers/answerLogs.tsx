@@ -1,18 +1,17 @@
+import { Reducer } from 'react'
+
 import { ADD_ANSWER_LOG } from 'store/actions/answerLogs'
 
 type StateType = {
   category: string
-  correctWrongJudgement: '○' | '×'
-  dateTime: Date
+  correctWrongJudgement: '○' | '×' | ''
+  dateTime: Date | ''
 }
 type ActionType = StateType & {
   type: typeof ADD_ANSWER_LOG
 }
 
-const answerLogs = (
-  state: StateType[],
-  action: ActionType,
-): StateType[] | never => {
+const answerLogsReducer: Reducer<StateType[], ActionType> = (state, action) => {
   switch (action.type) {
     case ADD_ANSWER_LOG:
       const answerLog = {
@@ -20,9 +19,10 @@ const answerLogs = (
         correctWrongJudgement: action.correctWrongJudgement,
         dateTime: action.dateTime,
       }
-      return [answerLog, ...state]
+      return [...state, answerLog]
     default:
       return state
   }
 }
-export default answerLogs
+
+export default answerLogsReducer
