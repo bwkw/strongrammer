@@ -1,23 +1,13 @@
-import { VFC, useReducer } from 'react'
+import { VFC, useContext } from 'react'
 
 import Grid from '@mui/material/Grid'
 
-import answerLogsReducer from 'store/reducers/answerLogs'
-import AnswerLogsTable from 'components/Table/answerLogs'
 import BackButton from 'components/Button/back'
-
-type StateType = {
-  category: string
-  correctWrongJudgement: '○' | '×' | ''
-  dateTime: Date | ''
-}
+import QuizLogsTable from 'components/Table/quizLogs'
+import QuizLogsReducerContext from 'components/Context/quizLogsReducer'
 
 const Log: VFC = () => {
-  const initialStates: StateType[] = [
-    { category: '', correctWrongJudgement: '', dateTime: '' },
-  ]
-  const [states] = useReducer(answerLogsReducer, initialStates)
-
+  const { states } = useContext(QuizLogsReducerContext)
   return (
     <>
       <BackButton url={'/'} />
@@ -25,7 +15,7 @@ const Log: VFC = () => {
         <Grid item xs={1} />
         <Grid item xs={10}>
           <h1>あなたのQuizログ</h1>
-          <AnswerLogsTable states={states} />
+          <QuizLogsTable states={states} />
         </Grid>
       </Grid>
     </>

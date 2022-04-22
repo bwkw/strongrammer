@@ -1,6 +1,6 @@
 import { Reducer } from 'react'
 
-import { ADD_QUIZ_LOG } from 'store/actions/quizLogs'
+import { ADD_QUIZ_LOG } from 'store/actions/quizLogsReducer'
 
 type StateType = {
   category: string
@@ -11,7 +11,7 @@ type ActionType = StateType & {
   type: typeof ADD_QUIZ_LOG
 }
 
-const quizLogsReducer: Reducer<StateType[], ActionType> = (state, action) => {
+const quizLogsReducer: Reducer<StateType[], ActionType> = (states, action) => {
   switch (action.type) {
     case ADD_QUIZ_LOG:
       const quizLog = {
@@ -19,9 +19,9 @@ const quizLogsReducer: Reducer<StateType[], ActionType> = (state, action) => {
         correctWrongJudgement: action.correctWrongJudgement,
         dateTime: action.dateTime,
       }
-      return [...state, quizLog]
+      return [...states, quizLog]
     default:
-      return state
+      return states
   }
 }
 
