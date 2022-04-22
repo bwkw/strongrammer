@@ -21,11 +21,11 @@ type StateType = {
   dateTime: Date | ''
 }
 
-type StateTypeProps = {
+type PropsStatesType = {
   states: StateType[]
 }
 
-const AnswerLogsTable: VFC<StateTypeProps> = ({ states }) => {
+const QuizLogsTable: VFC<PropsStatesType> = ({ states }) => {
   const columns: ColumnsType[] = [
     { id: 'category', label: 'カテゴリ', minWidth: 150 },
     {
@@ -75,6 +75,7 @@ const AnswerLogsTable: VFC<StateTypeProps> = ({ states }) => {
                 .map((state: StateType, index) => {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                      {state.category}
                       <TableCell key={state.category} align={'center'}>
                         {state.category}
                       </TableCell>
@@ -105,4 +106,4 @@ const AnswerLogsTable: VFC<StateTypeProps> = ({ states }) => {
   )
 }
 
-export default AnswerLogsTable
+export default QuizLogsTable
