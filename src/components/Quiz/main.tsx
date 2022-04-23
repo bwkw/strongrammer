@@ -9,6 +9,7 @@ import CheckAnswerButton from 'components/Button/checkAnswer'
 import QuestionMain from 'components/Question/main'
 
 type QuizProps = {
+  language: string
   title: string
   questions: string[]
   answers: string[]
@@ -18,6 +19,7 @@ type QuizProps = {
 }
 
 const Main: VFC<QuizProps> = ({
+  language,
   title,
   questions,
   answers,
@@ -27,7 +29,7 @@ const Main: VFC<QuizProps> = ({
 }) => {
   return (
     <>
-      <BackButton url={'/html'} />
+      <BackButton url={`/${language}`} />
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <h2>{title}編</h2>
@@ -48,6 +50,7 @@ const Main: VFC<QuizProps> = ({
         <CheckAnswerButton
           yourAnswers={yourAnswers}
           correctAnswers={correctAnswers}
+          category={`${language} ${title}`}
         />
       </Grid>
     </>

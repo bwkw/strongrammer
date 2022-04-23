@@ -10,12 +10,7 @@ import Top from 'pages/top'
 import UserLogs from 'pages/User/log'
 import QuizLogsReducerContext from 'components/Context/quizLogsReducer'
 import quizLogsReducer from 'store/reducers/quizLogs'
-
-type StateType = {
-  category: string
-  correctWrongJudgement: '○' | '×' | ''
-  dateTime: Date | ''
-}
+import { StateType } from 'type/quizLogsReducerType'
 
 const App: React.VFC = () => {
   const initialStates: StateType[] = [

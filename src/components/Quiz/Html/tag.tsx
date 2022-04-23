@@ -19,6 +19,7 @@ const Tag: VFC = () => {
   return (
     <>
       <QuizMain
+        language={'html'}
         title={'Tag'}
         questions={questions}
         answers={answers}

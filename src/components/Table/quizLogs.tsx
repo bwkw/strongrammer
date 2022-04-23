@@ -9,23 +9,9 @@ import TableHead from '@mui/material/TableHead'
 import TablePagination from '@mui/material/TablePagination'
 import TableRow from '@mui/material/TableRow'
 
-type ColumnsType = {
-  id: string
-  label: string
-  minWidth: number
-}
+import { ColumnsType, StateType, StatesType } from 'type/quizLogsReducerType'
 
-type StateType = {
-  category: string
-  correctWrongJudgement: '○' | '×' | ''
-  dateTime: Date | ''
-}
-
-type PropsStatesType = {
-  states: StateType[]
-}
-
-const QuizLogsTable: VFC<PropsStatesType> = ({ states }) => {
+const QuizLogsTable: VFC<StatesType> = ({ states }) => {
   const columns: ColumnsType[] = [
     { id: 'category', label: 'カテゴリ', minWidth: 150 },
     {
