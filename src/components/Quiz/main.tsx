@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid'
 import AnswerMain from 'components/Answer/main'
 import BackButton from 'components/Button/back'
 import CheckAnswerButton from 'components/Button/checkAnswer'
+import ForwardButton from 'components/Button/forward'
 import QuestionMain from 'components/Question/main'
 
 type QuizProps = {
@@ -29,7 +30,16 @@ const Main: VFC<QuizProps> = ({
 }) => {
   return (
     <>
-      <BackButton url={`/${language}`} />
+      <Grid item container xs={12}>
+        <Grid item xs={1}>
+          <BackButton url={`/${language}`} />
+        </Grid>
+        <Grid item xs={9} />
+        <Grid item xs={2}>
+          <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+        </Grid>
+      </Grid>
+
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <h2>{title}編</h2>

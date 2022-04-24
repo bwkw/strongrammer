@@ -22,17 +22,17 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
 
   const checkCorrectWrong = (): void => {
     if (JSON.stringify(yourAnswers) === JSON.stringify(correctAnswers)) {
-      Swal.fire({
-        icon: 'success',
-        title: 'You are Correct !',
-        showConfirmButton: false,
-        timer: 1500,
-      })
       dispatch({
         type: ADD_QUIZ_LOG,
         category: category,
         correctWrongJudgement: '○',
         dateTime: Date(),
+      })
+      Swal.fire({
+        icon: 'success',
+        title: 'You are Correct !',
+        showConfirmButton: false,
+        timer: 1500,
       })
     } else {
       Swal.fire({
