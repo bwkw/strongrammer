@@ -35,6 +35,12 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         timer: 1500,
       })
     } else {
+      dispatch({
+        type: ADD_QUIZ_LOG,
+        category: category,
+        correctWrongJudgement: '×',
+        dateTime: Date(),
+      })
       Swal.fire({
         icon: 'error',
         title: 'You are Wrong !',

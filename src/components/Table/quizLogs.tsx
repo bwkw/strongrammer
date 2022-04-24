@@ -61,7 +61,6 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
                 .map((state: StateType, index) => {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-                      {state.category}
                       <TableCell key={state.category} align={'center'}>
                         {state.category}
                       </TableCell>
