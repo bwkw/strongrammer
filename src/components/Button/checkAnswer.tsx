@@ -5,6 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import Swal from 'sweetalert2'
 
 import { ADD_QUIZ_LOG } from 'store/actions/quizLogsReducer'
+import formatDate from 'components/Format/formatDate'
 import QuizLogsReducerContext from 'components/Context/quizLogsReducer'
 
 type CheckAnswerProps = {
@@ -26,7 +27,7 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         type: ADD_QUIZ_LOG,
         category: category,
         correctWrongJudgement: '○',
-        dateTime: Date(),
+        dateTime: formatDate(new Date(), 'YYYY/MM/DD hh:mm:ss'),
       })
       Swal.fire({
         icon: 'success',
@@ -39,7 +40,7 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         type: ADD_QUIZ_LOG,
         category: category,
         correctWrongJudgement: '×',
-        dateTime: Date(),
+        dateTime: formatDate(new Date(), 'YYYY/MM/DD hh:mm:ss'),
       })
       Swal.fire({
         icon: 'error',
