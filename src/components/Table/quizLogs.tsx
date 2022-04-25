@@ -32,7 +32,7 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
     setPage(newPage)
   }
 
-  const handleChangeRowsPerPage = (event: any) => {
+  const handleChangeRowsPerPage = (event: any | null) => {
     setRowsPerPage(+event.target.value)
     setPage(0)
   }
@@ -58,7 +58,7 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
             <TableBody>
               {states
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((state: StateType, index) => {
+                .map((state: StateType, index: number) => {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                       <TableCell key={state.category} align={'center'}>

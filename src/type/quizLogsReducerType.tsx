@@ -9,7 +9,7 @@ export type ColumnsType = {
 
 export type StateType = {
   category: string
-  correctWrongJudgement: '○' | '×' | ''
+  correctWrongJudgement: '○' | '×'
   dateTime: string
 }
 
