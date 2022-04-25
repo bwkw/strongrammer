@@ -6,9 +6,10 @@ import Button from '@mui/material/Button'
 
 type BackButtonProps = {
   url: string
+  letter: string
 }
 
-const BackButton: VFC<BackButtonProps> = ({ url }) => {
+const BackButton: VFC<BackButtonProps> = ({ url, letter }) => {
   return (
     <>
       <Button
@@ -18,7 +19,7 @@ const BackButton: VFC<BackButtonProps> = ({ url }) => {
         startIcon={<ArrowBackIcon />}
         style={{ textTransform: 'none' }}
       >
-        戻る
+        {letter}
       </Button>
     </>
   )

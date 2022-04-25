@@ -10,10 +10,10 @@ const Index: VFC = () => {
   return (
     <>
       <Grid item container xs={12}>
-        <Grid item xs={1}>
-          <BackButton url={'/'} />
+        <Grid item xs={2}>
+          <BackButton url={'/'} letter={'戻る'} />
         </Grid>
-        <Grid item xs={9} />
+        <Grid item xs={8} />
         <Grid item xs={2}>
           <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
         </Grid>

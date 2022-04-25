@@ -10,7 +10,7 @@ const Log: VFC = () => {
   const { states } = useContext(QuizLogsReducerContext)
   return (
     <>
-      <BackButton url={'/'} />
+      <BackButton url={'/'} letter={'Homeへ'} />
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <Grid item xs={10}>
