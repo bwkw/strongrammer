@@ -26,6 +26,8 @@ const Index: VFC = () => {
           &emsp;
           <LinkButton url="/html/input" letter="Input" />
           &emsp;
+          <LinkButton url="/html/inline-block" letter="Inline/Block" />
+          &emsp;
         </Grid>
       </Grid>
     </>

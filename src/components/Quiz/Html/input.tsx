@@ -33,7 +33,7 @@ const Input: VFC = () => {
   return (
     <>
       <QuizMain
-        language={'html'}
+        language={'HTML'}
         title={'Input'}
         questions={questions}
         answers={answers}
