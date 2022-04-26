@@ -23,6 +23,8 @@ const Index: VFC = () => {
         <Grid item xs={6}>
           <h1>CSS</h1>
           <LinkButton url="/css/component" letter="Component" />
+          &emsp;
+          <LinkButton url="/css/font-property" letter="FontProperty" />
         </Grid>
       </Grid>
     </>
