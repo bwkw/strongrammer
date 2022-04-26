@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material'
 
-import HtmlIndex from 'pages/Html/index'
-import HtmlShow from 'pages/Html/show'
+import HtmlIndex from 'pages/HTML/index'
+import HtmlShow from 'pages/HTML/show'
 import myTheme from 'components/theme'
 import Top from 'pages/top'
 import UserLogs from 'pages/User/log'
