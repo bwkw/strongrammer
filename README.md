@@ -1,3 +1,3 @@
 # アプリの概要
 
-最強のプログラマー（Strong Programmer）を目指すための、Strongrammer というアプリです。
+強強プログラマー（Strong Programmer）を目指すための、Strongrammer というアプリです。
