@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material'
 
+import CssIndex from 'pages/CSS/index'
+import CssShow from 'pages/CSS/show'
 import HtmlIndex from 'pages/HTML/index'
 import HtmlShow from 'pages/HTML/show'
 import myTheme from 'components/theme'
@@ -38,6 +40,8 @@ const App: React.VFC = () => {
             <Route path="/user/logs" element={<UserLogs />}></Route>
             <Route path="/html" element={<HtmlIndex />}></Route>
             <Route path="/html/:category" element={<HtmlShow />}></Route>
+            <Route path="/css" element={<CssIndex />}></Route>
+            <Route path="/css/:category" element={<CssShow />}></Route>
           </Routes>
         </BrowserRouter>
       </QuizLogsReducerContext.Provider>

@@ -18,6 +18,8 @@ const Top: VFC = () => {
         <Grid item xs={6}>
           <h1>Strongrammer</h1>
           <LinkButton url="/html" letter="HTML" />
+          &emsp;
+          <LinkButton url="/css" letter="CSS" />
         </Grid>
       </Grid>
     </>
