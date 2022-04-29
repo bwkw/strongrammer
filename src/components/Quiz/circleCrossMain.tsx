@@ -1,9 +1,9 @@
 import { VFC } from 'react'
 
-type CircleCrossMainProps = {}
+type CircleCrossQuizMainProps = {}
 
-const CircleCrossMain: VFC<CircleCrossMainProps> = ({}) => {
+const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({}) => {
   return <></>
 }
 
-export default CircleCrossMain
+export default CircleCrossQuizMain

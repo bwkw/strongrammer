@@ -3,11 +3,11 @@ import { VFC } from 'react'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 
-type QuestionProps = {
+type SortQuestionMainProps = {
   questions: string[]
 }
 
-const SortMain: VFC<QuestionProps> = ({ questions }) => {
+const SortQuestionMain: VFC<SortQuestionMainProps> = ({ questions }) => {
   return (
     <List>
       {questions.map((question, index) => {
@@ -23,4 +23,4 @@ const SortMain: VFC<QuestionProps> = ({ questions }) => {
   )
 }
 
-export default SortMain
+export default SortQuestionMain

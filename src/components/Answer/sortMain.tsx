@@ -4,12 +4,12 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 
-type AnswerProps = {
+type SortAnswerMainProps = {
   answers: string[]
   setAnswers: any
 }
 
-const SortMain: VFC<AnswerProps> = ({ answers, setAnswers }) => {
+const SortAnswerMain: VFC<SortAnswerMainProps> = ({ answers, setAnswers }) => {
   const onDragEnd = (result: any) => {
     const items = Array.from(answers)
     const [reorderedItem] = items.splice(result.source.index, 1)
@@ -77,4 +77,4 @@ const SortMain: VFC<AnswerProps> = ({ answers, setAnswers }) => {
   )
 }
 
-export default SortMain
+export default SortAnswerMain

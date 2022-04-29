@@ -9,7 +9,7 @@ import CheckAnswerButton from 'components/Button/checkAnswer'
 import ForwardButton from 'components/Button/forward'
 import QuestionMain from 'components/Question/sortMain'
 
-type QuizProps = {
+type SortQuizMainProps = {
   language: string
   title: string
   questions: string[]
@@ -19,7 +19,7 @@ type QuizProps = {
   correctAnswers: string[]
 }
 
-const SortMain: VFC<QuizProps> = ({
+const SortQuizMain: VFC<SortQuizMainProps> = ({
   language,
   title,
   questions,
@@ -67,4 +67,4 @@ const SortMain: VFC<QuizProps> = ({
   )
 }
 
-export default SortMain
+export default SortQuizMain
