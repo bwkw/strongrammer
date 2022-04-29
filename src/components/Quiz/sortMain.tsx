@@ -19,7 +19,7 @@ type QuizProps = {
   correctAnswers: string[]
 }
 
-const Main: VFC<QuizProps> = ({
+const SortMain: VFC<QuizProps> = ({
   language,
   title,
   questions,
@@ -67,4 +67,4 @@ const Main: VFC<QuizProps> = ({
   )
 }
 
-export default Main
+export default SortMain
