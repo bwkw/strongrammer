@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react'
 
-import QuizMain from 'components/Quiz/main'
+import QuizMain from 'components/Quiz/sortMain'
 import shuffleArray from 'components/Format/shuffleArray'
 
 const TextProperty: VFC = () => {
