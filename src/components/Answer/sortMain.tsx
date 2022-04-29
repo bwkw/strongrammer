@@ -9,7 +9,7 @@ type AnswerProps = {
   setAnswers: any
 }
 
-const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
+const SortMain: VFC<AnswerProps> = ({ answers, setAnswers }) => {
   const onDragEnd = (result: any) => {
     const items = Array.from(answers)
     const [reorderedItem] = items.splice(result.source.index, 1)
@@ -77,4 +77,4 @@ const Main: VFC<AnswerProps> = ({ answers, setAnswers }) => {
   )
 }
 
-export default Main
+export default SortMain

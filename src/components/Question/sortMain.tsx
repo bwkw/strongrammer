@@ -7,7 +7,7 @@ type QuestionProps = {
   questions: string[]
 }
 
-const Main: VFC<QuestionProps> = ({ questions }) => {
+const SortMain: VFC<QuestionProps> = ({ questions }) => {
   return (
     <List>
       {questions.map((question, index) => {
@@ -23,4 +23,4 @@ const Main: VFC<QuestionProps> = ({ questions }) => {
   )
 }
 
-export default Main
+export default SortMain

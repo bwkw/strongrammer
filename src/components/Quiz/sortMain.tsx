@@ -3,11 +3,11 @@ import { VFC } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
-import AnswerMain from 'components/Answer/main'
+import AnswerMain from 'components/Answer/sortMain'
 import BackButton from 'components/Button/back'
 import CheckAnswerButton from 'components/Button/checkAnswer'
 import ForwardButton from 'components/Button/forward'
-import QuestionMain from 'components/Question/main'
+import QuestionMain from 'components/Question/sortMain'
 
 type QuizProps = {
   language: string
