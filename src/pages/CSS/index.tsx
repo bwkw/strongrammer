@@ -20,13 +20,15 @@ const Index: VFC = () => {
       </Grid>
       <Grid item container xs={12}>
         <Grid item xs={1} />
-        <Grid item xs={6}>
+        <Grid item xs={10}>
           <h1>CSS</h1>
           <LinkButton url="/css/component" letter="Component" />
           &emsp;
           <LinkButton url="/css/font-property" letter="FontProperty" />
           &emsp;
           <LinkButton url="/css/text-property" letter="TextProperty" />
+          &emsp;
+          <LinkButton url="/css/background" letter="Background" />
         </Grid>
       </Grid>
     </>
