@@ -5,7 +5,7 @@ import CircleCrossQuizModal from 'components/Modal/circleCrossQuiz'
 
 type CircleCrossQuizMainProps = {}
 
-const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({}) => {
+const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = () => {
   const [open, setOpen] = useState(false)
   return (
     <>
