@@ -2,7 +2,7 @@ import { VFC } from 'react'
 
 type CircleCrossQuestionMainProps = {}
 
-const CircleCrossQuestionMain: VFC<CircleCrossQuestionMainProps> = ({}) => {
+const CircleCrossQuestionMain: VFC<CircleCrossQuestionMainProps> = () => {
   return <></>
 }
 
