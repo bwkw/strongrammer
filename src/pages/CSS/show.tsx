@@ -5,7 +5,7 @@ import QuizCssBackground from 'components/Quiz/CSS/background'
 import QuizCssComponent from 'components/Quiz/CSS/component'
 import QuizCssFont from 'components/Quiz/CSS/font'
 import QuizCssText from 'components/Quiz/CSS/text'
-import QuizCssMargin from 'components/Quiz/Css/Margin'
+import QuizCssMargin from 'components/Quiz/CSS/margin'
 
 const Show: VFC = () => {
   const { category } = useParams<{ category: string }>()

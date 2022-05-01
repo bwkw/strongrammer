@@ -29,6 +29,8 @@ const Index: VFC = () => {
           <LinkButton url="/css/text-property" letter="TextProperty" />
           &emsp;
           <LinkButton url="/css/background" letter="Background" />
+          &emsp;
+          <LinkButton url="/css/margin" letter="Margin" />
         </Grid>
       </Grid>
     </>
