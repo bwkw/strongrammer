@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom'
 
 import QuizCssBackground from 'components/Quiz/CSS/background'
 import QuizCssComponent from 'components/Quiz/CSS/component'
-import QuizCssFontProperty from 'components/Quiz/CSS/fontProperty'
-import QuizCssTextProperty from 'components/Quiz/CSS/textProperty'
+import QuizCssFont from 'components/Quiz/CSS/font'
+import QuizCssText from 'components/Quiz/CSS/text'
+import QuizCssMargin from 'components/Quiz/Css/Margin'
 
 const Show: VFC = () => {
   const { category } = useParams<{ category: string }>()
@@ -12,9 +13,10 @@ const Show: VFC = () => {
   return (
     <>
       {category === 'component' && <QuizCssComponent />}
-      {category === 'font-property' && <QuizCssFontProperty />}
-      {category === 'text-property' && <QuizCssTextProperty />}
+      {category === 'font' && <QuizCssFont />}
+      {category === 'text' && <QuizCssText />}
       {category === 'background' && <QuizCssBackground />}
+      {category === 'margin' && <QuizCssMargin />}
     </>
   )
 }
