@@ -4,11 +4,11 @@ import Button from '@mui/material/Button'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 type QuizStartButtonProps = {
-  setOpen: any
+  setQuizStartFlag: any
 }
 
-const QuizStartButton: VFC<QuizStartButtonProps> = ({ setOpen }) => {
-  const displayModal = () => setOpen(true)
+const QuizStartButton: VFC<QuizStartButtonProps> = ({ setQuizStartFlag }) => {
+  const quizStart = () => setQuizStartFlag(true)
 
   return (
     <>
@@ -16,7 +16,7 @@ const QuizStartButton: VFC<QuizStartButtonProps> = ({ setOpen }) => {
         color={'error'}
         startIcon={<KeyboardArrowRightIcon />}
         style={{ textTransform: 'none' }}
-        onClick={displayModal}
+        onClick={quizStart}
       >
         Quizを開始する
       </Button>

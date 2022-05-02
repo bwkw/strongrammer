@@ -3,9 +3,8 @@ import { VFC, useState } from 'react'
 import Grid from '@mui/material/Grid'
 
 import BackButton from 'components/Button/back'
-import CircleCrossQuizModal from 'components/Modal/circleCrossQuiz'
 import ForwardButton from 'components/Button/forward'
-import StartButton from 'components/Button/quizStart'
+import QuizStartButton from 'components/Button/quizStart'
 
 type CircleCrossQuizMainProps = {
   language: string
@@ -16,7 +15,7 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
   language,
   title,
 }) => {
-  const [open, setOpen] = useState(false)
+  const [quizStartFlag, setQuizStartFlag] = useState(false)
   return (
     <>
       <Grid item container xs={12}>
@@ -36,8 +35,10 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
 
       <Grid item container xs={12}>
         <Grid item xs={5} />
-        <StartButton setOpen={setOpen} />
-        <CircleCrossQuizModal open={open} setOpen={setOpen} />
+        {!quizStartFlag && (
+          <QuizStartButton setQuizStartFlag={setQuizStartFlag} />
+        )}
+        {quizStartFlag && <div>test</div>}
       </Grid>
     </>
   )
