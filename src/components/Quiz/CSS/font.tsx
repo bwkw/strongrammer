@@ -18,7 +18,7 @@ const Font: VFC = () => {
     <>
       <QuizMain
         language={'CSS'}
-        title={'FontProperty'}
+        title={'Font'}
         questions={questions}
         answers={answers}
         setAnswers={setAnswers}

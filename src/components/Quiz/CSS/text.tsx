@@ -18,7 +18,7 @@ const Text: VFC = () => {
     <>
       <QuizMain
         language={'CSS'}
-        title={'TextProperty'}
+        title={'Text'}
         questions={questions}
         answers={answers}
         setAnswers={setAnswers}

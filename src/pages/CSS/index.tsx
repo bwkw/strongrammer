@@ -24,9 +24,9 @@ const Index: VFC = () => {
           <h1>CSS</h1>
           <LinkButton url="/css/component" letter="Component" />
           &emsp;
-          <LinkButton url="/css/font-property" letter="FontProperty" />
+          <LinkButton url="/css/font" letter="Font" />
           &emsp;
-          <LinkButton url="/css/text-property" letter="TextProperty" />
+          <LinkButton url="/css/text" letter="Text" />
           &emsp;
           <LinkButton url="/css/background" letter="Background" />
           &emsp;
