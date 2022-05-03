@@ -1,6 +1,7 @@
 import { VFC, useState } from 'react'
 
-import QuizMain from 'components/Quiz/sortMain'
+import QuizCommonPart from 'components/Quiz/commonPart'
+import SortQuizMain from 'components/Quiz/sortMain'
 import shuffleArray from 'components/Format/shuffleArray'
 
 const Input: VFC = () => {
@@ -32,7 +33,8 @@ const Input: VFC = () => {
 
   return (
     <>
-      <QuizMain
+      <QuizCommonPart language={'HTML'} title={'Input'} />
+      <SortQuizMain
         language={'HTML'}
         title={'Input'}
         questions={questions}

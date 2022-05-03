@@ -1,6 +1,7 @@
 import { VFC, useState } from 'react'
 
-import QuizMain from 'components/Quiz/sortMain'
+import QuizCommonPart from 'components/Quiz/commonPart'
+import SortQuizMain from 'components/Quiz/sortMain'
 import shuffleArray from 'components/Format/shuffleArray'
 
 const InlineBlock: VFC = () => {
@@ -30,7 +31,8 @@ const InlineBlock: VFC = () => {
 
   return (
     <>
-      <QuizMain
+      <QuizCommonPart language={'HTML'} title={'Inline/Block'} />
+      <SortQuizMain
         language={'HTML'}
         title={'Inline/Block'}
         questions={questions}

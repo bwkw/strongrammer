@@ -1,11 +1,13 @@
 import { VFC } from 'react'
 
 import CircleCrossQuizMain from 'components/Quiz/circleCrossMain'
+import QuizCommonPart from 'components/Quiz/commonPart'
 
 const Margin: VFC = () => {
   return (
     <>
-      <CircleCrossQuizMain language={'CSS'} title={'margin'} />
+      <QuizCommonPart language={'CSS'} title={'Margin'} />
+      <CircleCrossQuizMain />
     </>
   )
 }

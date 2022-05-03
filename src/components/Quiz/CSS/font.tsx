@@ -1,6 +1,7 @@
 import { VFC, useState } from 'react'
 
-import QuizMain from 'components/Quiz/sortMain'
+import QuizCommonPart from 'components/Quiz/commonPart'
+import SortQuizMain from 'components/Quiz/sortMain'
 import shuffleArray from 'components/Format/shuffleArray'
 
 const Font: VFC = () => {
@@ -16,7 +17,8 @@ const Font: VFC = () => {
 
   return (
     <>
-      <QuizMain
+      <QuizCommonPart language={'CSS'} title={'Font'} />
+      <SortQuizMain
         language={'CSS'}
         title={'Font'}
         questions={questions}
