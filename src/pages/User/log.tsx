@@ -10,11 +10,13 @@ const Log: VFC = () => {
   const { states } = useContext(QuizLogsReducerContext)
   return (
     <>
-      <BackButton url={'/'} letter={'Homeへ'} />
+      <div className={'mt-3 ml-2'}>
+        <BackButton url={'/'} letter={'Homeへ'} />
+      </div>
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <Grid item xs={10}>
-          <h1>あなたのQuizログ</h1>
+          <p className={'text-2xl mt-3 mb-5'}>あなたのQuizログ</p>
           <QuizLogsTable states={states} />
         </Grid>
       </Grid>

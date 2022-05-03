@@ -20,17 +20,21 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
     <>
       <Grid item container xs={12}>
         <Grid item xs={2}>
-          <BackButton url={`/${language}`} letter={'戻る'} />
+          <div className={'mt-3 ml-2'}>
+            <BackButton url={`/${language}`} letter={'戻る'} />
+          </div>
         </Grid>
         <Grid item xs={8} />
         <Grid item xs={2}>
-          <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+          <div className={'mt-3'}>
+            <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+          </div>
         </Grid>
       </Grid>
 
       <Grid item container xs={12}>
         <Grid item xs={1} />
-        <h2>{title}編</h2>
+        <p className={'text-3xl mt-3 mb-4'}>{title} 編</p>
       </Grid>
 
       <Grid item container xs={12}>

@@ -11,17 +11,21 @@ const Index: VFC = () => {
     <>
       <Grid item container xs={12}>
         <Grid item xs={2}>
-          <BackButton url={'/'} letter={'戻る'} />
+          <div className={'mt-3 ml-2'}>
+            <BackButton url={'/'} letter={'戻る'} />
+          </div>
         </Grid>
         <Grid item xs={8} />
         <Grid item xs={2}>
-          <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+          <div className={'mt-3'}>
+            <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+          </div>
         </Grid>
       </Grid>
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <Grid item xs={10}>
-          <h1>CSS</h1>
+          <p className={'text-4xl mt-3 mb-4'}>CSS</p>
           <LinkButton url="/css/component" letter="Component" />
           &emsp;
           <LinkButton url="/css/font" letter="Font" />

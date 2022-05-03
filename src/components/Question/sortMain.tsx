@@ -13,9 +13,9 @@ const SortQuestionMain: VFC<SortQuestionMainProps> = ({ questions }) => {
       {questions.map((question, index) => {
         return (
           <ListItem key={index}>
-            <h3>
+            <p className={'text-xl mt-5 mb-4'}>
               Q{index + 1}. {question}
-            </h3>
+            </p>
           </ListItem>
         )
       })}

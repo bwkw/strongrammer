@@ -46,7 +46,7 @@ const SortAnswerMain: VFC<SortAnswerMainProps> = ({ answers, setAnswers }) => {
                             position: 'relative',
                             borderRadius: 10,
                             width: '100px',
-                            height: '63px',
+                            height: '65px',
                             border: '1px solid gray',
                             boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
                           }}

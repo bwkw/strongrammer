@@ -10,13 +10,14 @@ const Top: VFC = () => {
     <>
       <Grid item container xs={12}>
         <Grid item xs={10} />
-        <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+        <div className={'mt-3'}>
+          <ForwardButton url={'/user/logs'} letter={'Quizログへ'} />
+        </div>
       </Grid>
-
       <Grid item container xs={12}>
         <Grid item xs={1} />
         <Grid item xs={6}>
-          <h1>Strongrammer</h1>
+          <p className={'text-4xl mt-3 mb-4'}>Strongrammer</p>
           <LinkButton url="/html" letter="HTML" />
           &emsp;
           <LinkButton url="/css" letter="CSS" />
