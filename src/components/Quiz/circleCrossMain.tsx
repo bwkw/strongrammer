@@ -4,6 +4,11 @@ import QuizStartButton from 'components/Button/quizStart'
 
 const CircleCrossQuizMain: VFC = () => {
   const [quizStartFlag, setQuizStartFlag] = useState(false)
+
+  const quizList = [
+    'marginを上30px, 下20px, 左15px, 右15px作る指定方法は、\n「margin: 30px 15px 20px」である。',
+  ]
+
   return (
     <>
       <div className="grid grid-cols-12 mt-4">
@@ -18,9 +23,8 @@ const CircleCrossQuizMain: VFC = () => {
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Q1.
               </h5>
-              <p className="mb-7 font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
+              <p className="mb-7 font-normal text-gray-700 dark:text-gray-400 whitespace-pre-line">
+                {quizList[0]}
               </p>
 
               <div className="flex flex-col items-center">
