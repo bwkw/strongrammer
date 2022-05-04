@@ -1,20 +1,26 @@
 import { VFC, useState } from 'react'
 
-import Grid from '@mui/material/Grid'
-
 import QuizStartButton from 'components/Button/quizStart'
 
 const CircleCrossQuizMain: VFC = () => {
   const [quizStartFlag, setQuizStartFlag] = useState(false)
   return (
     <>
-      <Grid item container xs={12}>
-        <Grid item xs={5} />
+      <div className="grid grid-cols-12 mt-4">
         {!quizStartFlag && (
-          <QuizStartButton setQuizStartFlag={setQuizStartFlag} />
+          <div className="col-span-12 text-center">
+            <QuizStartButton setQuizStartFlag={setQuizStartFlag} />
+          </div>
         )}
-        {quizStartFlag && <div>test</div>}
-      </Grid>
+        {quizStartFlag && (
+          <div className="relative col-start-3 col-span-8">
+            <div className="absolute inset-x-0 top-0 h-16 bg-gray-600">Q1.</div>
+            <div className="absolute inset-x-0 top-16 h-64 bg-gray-200">
+              テスト
+            </div>
+          </div>
+        )}
+      </div>
     </>
   )
 }
