@@ -23,9 +23,9 @@ const CircleCrossQuizMain: VFC = () => {
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Q1.
               </h5>
-              <p className="mb-7 font-normal text-gray-700 dark:text-gray-400 whitespace-pre-line">
-                {quizList[0]}
-              </p>
+              <div className="mb-7 font-normal text-gray-700 text-center dark:text-gray-400 whitespace-pre-line">
+                <p className="text-left inline-block">{quizList[0]}</p>
+              </div>
 
               <div className="flex flex-col items-center">
                 <div className="flex mt-4 space-x-12">
