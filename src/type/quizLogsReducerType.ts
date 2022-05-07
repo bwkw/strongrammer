@@ -1,6 +1,6 @@
 // quizLogsReducerに関するtypeを定義
 
-import { ADD_QUIZ_LOG } from 'store/actions/quizLogsReducer'
+import { ADD_QUIZ_LOG } from 'store/actions/quizLogs'
 
 export type ColumnsType = {
   id: string
