@@ -9,6 +9,18 @@ const circleCrossQuizReducer: Reducer<StateType[], ActionType> = (
 ) => {
   switch (action.type) {
     case SET_USER_CORRECT_COUNT_AND_ANSWER:
+      const quizLog = {
+        questionNumber: action.questionNumber,
+        user_answer: action.user_answer,
+      }
+      const length: number = states.length
+      const quizLogs = [...states[length].circleCrossQuizLogs, quizLog]
+      const state: StateType = {
+        correct_count: 1,
+        circleCrossQuizLogs: quizLogs,
+      }
+      return [...states, state]
+
     default:
       return states
   }
