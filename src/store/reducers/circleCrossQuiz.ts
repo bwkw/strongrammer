@@ -13,14 +13,28 @@ const circleCrossQuizReducer: Reducer<StateType[], ActionType> = (
         questionNumber: action.questionNumber,
         user_answer: action.user_answer,
       }
-      const length: number = states.length
-      const quizLogs = [...states[length].circleCrossQuizLogs, quizLog]
-      const state: StateType = {
-        correct_count: 1,
-        circleCrossQuizLogs: quizLogs,
-      }
-      return [...states, state]
+      const statesLength: number = states.length
+      const quizLogsLength: number =
+        states[statesLength].circleCrossQuizLogs.length
+      if (quizLogsLength < 5) {
+        const quizLogs = [...states[statesLength].circleCrossQuizLogs, quizLog]
+        const state: StateType = {
+          correct_count: 1,
+          circleCrossQuizLogs: quizLogs,
+        }
 
+        // states = states.pop()
+
+        return [...states, state]
+      } else {
+        const quizLogs = []
+        quizLogs[0] = quizLog
+        const state: StateType = {
+          correct_count: 1,
+          circleCrossQuizLogs: quizLogs,
+        }
+        return [...states, state]
+      }
     default:
       return states
   }
