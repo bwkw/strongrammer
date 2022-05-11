@@ -4,10 +4,10 @@ import { SET_USER_CORRECT_COUNT_AND_ANSWER } from 'store/actions/circleCrossQuiz
 
 export type CircleCrossQuizLog = {
   questionNumber: number
-  user_answer: '○' | '×'
+  userAnswer: '○' | '×'
 }
 export type StateType = {
-  correct_count: number
+  correctCount: number
   circleCrossQuizLogs: CircleCrossQuizLog[]
 }
 

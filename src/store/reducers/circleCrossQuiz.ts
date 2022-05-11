@@ -11,14 +11,14 @@ const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
     case SET_USER_CORRECT_COUNT_AND_ANSWER:
       const quizLog = {
         questionNumber: action.questionNumber,
-        user_answer: action.user_answer,
+        userAnswer: action.userAnswer,
       }
       const statesLength: number = states.length
       if (statesLength === 0) {
         const quizLogs = []
         quizLogs[0] = quizLog
         const state: StateType = {
-          correct_count: 1,
+          correctCount: 1,
           circleCrossQuizLogs: quizLogs,
         }
         return [...states, state]
@@ -31,7 +31,7 @@ const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
             quizLog,
           ]
           const state: StateType = {
-            correct_count: 1,
+            correctCount: 1,
             circleCrossQuizLogs: quizLogs,
           }
           states[statesLength - 1] = state
@@ -40,7 +40,7 @@ const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
           const quizLogs = []
           quizLogs[0] = quizLog
           const state: StateType = {
-            correct_count: 1,
+            correctCount: 1,
             circleCrossQuizLogs: quizLogs,
           }
           return [...states, state]
