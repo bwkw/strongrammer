@@ -3,8 +3,15 @@ import { VFC, useState } from 'react'
 import CircleCrossQuestionMain from 'components/Question/circleCrossMain'
 import QuizStartButton from 'components/Button/quizStart'
 
+// const CIRCLE_CROSS_QUIZ_REDUCER_KEY = 'circleCrossQuizReducer'
+
 const CircleCrossQuizMain: VFC = () => {
   const [quizStartFlag, setQuizStartFlag] = useState(false)
+  const [activeStep, setActiveStep] = useState(0)
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1)
+  }
 
   return (
     <>
@@ -18,12 +25,18 @@ const CircleCrossQuizMain: VFC = () => {
           <div className="relative col-start-3 col-span-8">
             <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
               <div className="flex flex-col items-center">
-                <CircleCrossQuestionMain />
+                <CircleCrossQuestionMain activeStep={activeStep} />
                 <div className="flex mt-4 space-x-12">
-                  <button className="inline-flex items-center py-2 px-12 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+                  <button
+                    className="inline-flex items-center py-2 px-12 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                    onClick={handleNext}
+                  >
                     ○
                   </button>
-                  <button className="inline-flex items-center py-2 px-12 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+                  <button
+                    className="inline-flex items-center py-2 px-12 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                    onClick={handleNext}
+                  >
                     ×
                   </button>
                 </div>
