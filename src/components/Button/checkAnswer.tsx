@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import Swal from 'sweetalert2'
 
-import { ADD_QUIZ_LOG } from 'store/actions/quizLogs'
+import { ADD_QUIZ_LOG } from 'store/actions/quizLogsReducer'
 import formatDate from 'components/Format/formatDate'
 import QuizLogsReducerContext from 'components/Context/quizLogsReducer'
 

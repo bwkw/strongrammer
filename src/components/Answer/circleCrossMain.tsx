@@ -13,12 +13,12 @@ const CircleCrossAnswerMain: VFC<CircleCrossAnswerMainProps> = ({
   dispatch,
 }) => {
   const handleNext = (userAnswer: '○' | '×') => {
-    setActiveStep((prevActiveStep: number) => prevActiveStep + 1)
     dispatch({
       type: 'SET_USER_CORRECT_COUNT_AND_ANSWER',
       questionNumber: activeStep + 1,
       userAnswer: userAnswer,
     })
+    setActiveStep((prevActiveStep: number) => prevActiveStep + 1)
   }
 
   return (

@@ -11,8 +11,7 @@ const CircleCrossQuizMain: VFC = () => {
   const [quizStartFlag, setQuizStartFlag] = useState(false)
   const [activeStep, setActiveStep] = useState(0)
 
-  const initialStates: any[] = []
-  const [states, dispatch] = useReducer(circleCrossQuizReducer, initialStates)
+  const [states, dispatch] = useReducer(circleCrossQuizReducer, [])
   console.log(states)
 
   return (
