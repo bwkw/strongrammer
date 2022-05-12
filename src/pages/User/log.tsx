@@ -7,7 +7,7 @@ import QuizLogsTable from 'components/Table/quizLogs'
 import QuizLogsReducerContext from 'components/Context/quizLogsReducer'
 
 const Log: VFC = () => {
-  const { states } = useContext(QuizLogsReducerContext)
+  const { quizLogsStates } = useContext(QuizLogsReducerContext)
   return (
     <>
       <div className={'mt-3 ml-2'}>
@@ -17,7 +17,7 @@ const Log: VFC = () => {
         <Grid item xs={1} />
         <Grid item xs={10}>
           <p className={'text-2xl mt-3 mb-5'}>あなたのQuizログ</p>
-          <QuizLogsTable states={states} />
+          <QuizLogsTable states={quizLogsStates} />
         </Grid>
       </Grid>
     </>

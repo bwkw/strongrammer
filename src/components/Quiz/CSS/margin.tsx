@@ -12,7 +12,12 @@ const Margin: VFC = () => {
   return (
     <>
       <QuizCommonPart language={'CSS'} title={'Margin'} />
-      <CircleCrossQuizMain quizList={quizList} answerList={answerList} />
+      <CircleCrossQuizMain
+        language={'CSS'}
+        title={'Margin'}
+        quizList={quizList}
+        answerList={answerList}
+      />
     </>
   )
 }
