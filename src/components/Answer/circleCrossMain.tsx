@@ -5,18 +5,22 @@ type CircleCrossAnswerMainProps = {
   activeStep: number
   setActiveStep: any
   dispatch: React.Dispatch<ActionType>
+  answerList: string[]
 }
 
 const CircleCrossAnswerMain: VFC<CircleCrossAnswerMainProps> = ({
   activeStep,
   setActiveStep,
   dispatch,
+  answerList,
 }) => {
   const handleNext = (userAnswer: '○' | '×') => {
+    const isCorrect = answerList[activeStep] === userAnswer
     dispatch({
       type: 'SET_USER_CORRECT_COUNT_AND_ANSWER',
       questionNumber: activeStep + 1,
       userAnswer: userAnswer,
+      isCorrect: isCorrect,
     })
     setActiveStep((prevActiveStep: number) => prevActiveStep + 1)
   }

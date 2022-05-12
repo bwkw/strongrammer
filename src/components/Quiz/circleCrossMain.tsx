@@ -7,10 +7,16 @@ import circleCrossQuizReducer from 'store/reducers/circleCrossQuiz'
 
 // const CIRCLE_CROSS_QUIZ_REDUCER_KEY = 'circleCrossQuizReducer'
 
-const CircleCrossQuizMain: VFC = () => {
-  const [quizStartFlag, setQuizStartFlag] = useState(false)
+type CircleCrossQuizMainProps = {
+  quizList: string[]
+  answerList: string[]
+}
+const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
+  quizList,
+  answerList,
+}) => {
   const [activeStep, setActiveStep] = useState(0)
-
+  const [quizStartFlag, setQuizStartFlag] = useState(false)
   const [states, dispatch] = useReducer(circleCrossQuizReducer, [])
   console.log(states)
 
@@ -28,11 +34,15 @@ const CircleCrossQuizMain: VFC = () => {
               <div className="flex flex-col items-center">
                 {activeStep < 2 ? (
                   <>
-                    <CircleCrossQuestionMain activeStep={activeStep} />
+                    <CircleCrossQuestionMain
+                      activeStep={activeStep}
+                      quizList={quizList}
+                    />
                     <CircleCrossAnswerMain
                       activeStep={activeStep}
                       setActiveStep={setActiveStep}
                       dispatch={dispatch}
+                      answerList={answerList}
                     />
                   </>
                 ) : (

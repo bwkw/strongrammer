@@ -12,6 +12,7 @@ const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
       let quizLog = {
         questionNumber: action.questionNumber,
         userAnswer: action.userAnswer,
+        isCorrect: action.isCorrect,
       }
       let statesLength: number = states.length
       if (statesLength === 0) {
