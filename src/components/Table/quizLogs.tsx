@@ -65,7 +65,9 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
                         {state.category}
                       </TableCell>
                       <TableCell key={state.result} align={'center'}>
-                        {state.result}
+                        {typeof state.result === 'number'
+                          ? `${state.result}点`
+                          : state.result}
                       </TableCell>
                       <TableCell align={'center'}>{state.dateTime}</TableCell>
                     </TableRow>
