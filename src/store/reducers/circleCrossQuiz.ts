@@ -3,7 +3,7 @@ import { Reducer } from 'react'
 import { SET_USER_CORRECT_COUNT_AND_ANSWER } from 'store/actions/circleCrossQuiz'
 import { StateType, ActionType } from 'type/circleCrossQuizReducer'
 
-const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
+const circleCrossQuizReducer: Reducer<StateType, ActionType> = (
   states,
   action,
 ) => {
@@ -14,40 +14,21 @@ const circleCrossQuizReducer: Reducer<StateType[] | [], ActionType> = (
         userAnswer: action.userAnswer,
         isCorrect: action.isCorrect,
       }
-      let statesLength: number = states.length
-      if (statesLength === 0) {
-        let quizLogs = []
-        quizLogs[0] = quizLog
-        let state: StateType = {
-          correctCount: 1,
-          circleCrossQuizLogs: quizLogs,
-        }
-        return [...states, state]
-      } else {
-        const quizLogsLength: number =
-          states[statesLength - 1].circleCrossQuizLogs.length
-        if (quizLogsLength < 5) {
-          let quizLogs = [
-            ...states[statesLength - 1].circleCrossQuizLogs,
-            quizLog,
-          ]
-          let state: StateType = {
-            correctCount: 1,
-            circleCrossQuizLogs: quizLogs,
+      const quizLogs = [...states.circleCrossQuizLogs, quizLog]
+      let correctCount = 0
+      quizLogs.forEach((quizLog) => {
+        Object.keys(quizLog).forEach((key) => {
+          if (key === 'isCorrect' && quizLog[key] === true) {
+            correctCount += 1
           }
-          const removeStates = states.splice(statesLength - 1, 1)
-          console.log(removeStates)
-          return [...states, state]
-        } else {
-          const quizLogs = []
-          quizLogs[0] = quizLog
-          const state: StateType = {
-            correctCount: 1,
-            circleCrossQuizLogs: quizLogs,
-          }
-          return [...states, state]
-        }
+        })
+      })
+      states = {
+        correctCount: correctCount,
+        circleCrossQuizLogs: quizLogs,
       }
+      return states
+
     default:
       return states
   }

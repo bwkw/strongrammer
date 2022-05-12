@@ -17,7 +17,8 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
 }) => {
   const [activeStep, setActiveStep] = useState(0)
   const [quizStartFlag, setQuizStartFlag] = useState(false)
-  const [states, dispatch] = useReducer(circleCrossQuizReducer, [])
+  const initialStates = { correctCount: 0, circleCrossQuizLogs: [] }
+  const [states, dispatch] = useReducer(circleCrossQuizReducer, initialStates)
   console.log(states)
 
   return (
@@ -49,7 +50,8 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
                   <>
                     <div className="font-normal text-gray-700 text-center dark:text-gray-400 whitespace-pre-line">
                       お疲れ様でした！
-                      <br /> あなたの点数は○点です。
+                      <br /> あなたの点数は
+                      {states.correctCount}点です。
                     </div>
                   </>
                 )}
