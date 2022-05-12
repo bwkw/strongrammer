@@ -12,7 +12,7 @@ const QuizCommonPart: VFC<QuizCommonPartProps> = ({ language, title }) => {
       <Grid item container xs={12}>
         <Grid item xs={2}>
           <div className={'mt-3 ml-2'}>
-            <BackButton url={`/${language}`} letter={'戻る'} />
+            <BackButton url={`/${language.toLowerCase()}`} letter={'戻る'} />
           </div>
         </Grid>
         <Grid item xs={8} />
