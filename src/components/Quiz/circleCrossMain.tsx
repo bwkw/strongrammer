@@ -5,7 +5,7 @@ import CircleCrossQuestionMain from 'components/Question/circleCrossMain'
 import QuizStartButton from 'components/Button/quizStart'
 import circleCrossQuizReducer from 'store/reducers/circleCrossQuiz'
 
-// const CIRCLE_CROSS_QUIZ_REDUCER_KEY = 'circleCrossQuizReducer'
+const CIRCLE_CROSS_QUIZ_REDUCER_KEY = 'circleCrossQuizReducer'
 
 type CircleCrossQuizMainProps = {
   quizList: string[]
@@ -19,7 +19,12 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
   const [quizStartFlag, setQuizStartFlag] = useState(false)
   const initialStates = { correctCount: 0, circleCrossQuizLogs: [] }
   const [states, dispatch] = useReducer(circleCrossQuizReducer, initialStates)
-  console.log(states)
+
+  if (activeStep === quizList.length) {
+    localStorage[CIRCLE_CROSS_QUIZ_REDUCER_KEY] = JSON.stringify(states)
+  }
+
+  console.log(localStorage.getItem(CIRCLE_CROSS_QUIZ_REDUCER_KEY))
 
   return (
     <>
@@ -50,8 +55,8 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
                   <>
                     <div className="font-normal text-gray-700 text-center dark:text-gray-400 whitespace-pre-line">
                       お疲れ様でした！
-                      <br /> あなたの点数は
-                      {states.correctCount}点です。
+                      <br /> あなたの点数は 100点満点中
+                      {(100 / quizList.length) * states.correctCount}点です。
                     </div>
                   </>
                 )}
