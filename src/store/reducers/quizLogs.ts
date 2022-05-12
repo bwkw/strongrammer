@@ -8,7 +8,7 @@ const quizLogsReducer: Reducer<StateType[], ActionType> = (states, action) => {
     case ADD_QUIZ_LOG:
       const quizLog = {
         category: action.category,
-        correctWrongJudgement: action.correctWrongJudgement,
+        result: action.result,
         dateTime: action.dateTime,
       }
       return [...states, quizLog]

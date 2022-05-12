@@ -19,14 +19,14 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
   yourAnswers,
   correctAnswers,
 }) => {
-  const { dispatch } = useContext(QuizLogsReducerContext)
+  const { quizLogsDispatch } = useContext(QuizLogsReducerContext)
 
   const checkCorrectWrong = (): void => {
     if (JSON.stringify(yourAnswers) === JSON.stringify(correctAnswers)) {
-      dispatch({
+      quizLogsDispatch({
         type: ADD_QUIZ_LOG,
         category: category,
-        correctWrongJudgement: '○',
+        result: '○',
         dateTime: formatDate(new Date(), 'YYYY/MM/DD hh:mm:ss'),
       })
       Swal.fire({
@@ -36,10 +36,10 @@ const CheckAnswerButton: VFC<CheckAnswerProps> = ({
         timer: 1500,
       })
     } else {
-      dispatch({
+      quizLogsDispatch({
         type: ADD_QUIZ_LOG,
         category: category,
-        correctWrongJudgement: '×',
+        result: '×',
         dateTime: formatDate(new Date(), 'YYYY/MM/DD hh:mm:ss'),
       })
       Swal.fire({

@@ -4,8 +4,8 @@ import { StateType, ActionType } from 'type/quizLogsReducerType'
 
 const QuizLogsReducerContext = createContext(
   {} as {
-    states: StateType[]
-    dispatch: React.Dispatch<ActionType>
+    quizLogsStates: StateType[]
+    quizLogsDispatch: React.Dispatch<ActionType>
   },
 )
 export default QuizLogsReducerContext

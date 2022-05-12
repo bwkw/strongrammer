@@ -15,8 +15,8 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
   const columns: ColumnsType[] = [
     { id: 'category', label: 'カテゴリ', minWidth: 150 },
     {
-      id: 'correctWrongJudgement',
-      label: '正誤判定',
+      id: 'result',
+      label: '結果',
       minWidth: 150,
     },
     { id: 'dateTime', label: '日付', minWidth: 150 },
@@ -64,11 +64,8 @@ const QuizLogsTable: VFC<StatesType> = ({ states }) => {
                       <TableCell key={state.category} align={'center'}>
                         {state.category}
                       </TableCell>
-                      <TableCell
-                        key={state.correctWrongJudgement}
-                        align={'center'}
-                      >
-                        {state.correctWrongJudgement}
+                      <TableCell key={state.result} align={'center'}>
+                        {state.result}
                       </TableCell>
                       <TableCell align={'center'}>{state.dateTime}</TableCell>
                     </TableRow>
