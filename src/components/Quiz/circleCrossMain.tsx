@@ -34,7 +34,7 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
     quizLogsDispatch({
       type: ADD_QUIZ_LOG,
       category: `${language} ${title}`,
-      result: (100 / quizList.length) * states.correctCount,
+      result: Math.round((100 / quizList.length) * states.correctCount),
       dateTime: formatDate(new Date(), 'YYYY/MM/DD hh:mm:ss'),
     })
     navigate('/user/logs')
@@ -52,7 +52,7 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
           <div className="relative col-start-3 col-span-8">
             <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
               <div className="flex flex-col items-center">
-                {activeStep < 2 ? (
+                {activeStep < quizList.length ? (
                   <>
                     <CircleCrossQuestionMain
                       activeStep={activeStep}
@@ -70,7 +70,10 @@ const CircleCrossQuizMain: VFC<CircleCrossQuizMainProps> = ({
                     <div className="font-normal text-gray-700 text-center dark:text-gray-400 whitespace-pre-line">
                       お疲れ様でした！
                       <br /> あなたの点数は 100点満点中
-                      {(100 / quizList.length) * states.correctCount}点です。
+                      {Math.round(
+                        (100 / quizList.length) * states.correctCount,
+                      )}
+                      点です。
                     </div>
                     <div className="flex mt-4 space-x-12">
                       <button

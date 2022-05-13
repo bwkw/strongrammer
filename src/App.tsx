@@ -17,7 +17,7 @@ import { StateType } from 'type/quizLogsReducerType'
 const QUIZ_LOGS_REDUCER_KEY = 'quizLogsReducer'
 
 const App: React.VFC = () => {
-  // localStorage.removeItem(QUIZ_LOGSCER_KEY)_REDU
+  // localStorage.removeItem(QUIZ_LOGS_REDUCER_KEY)
   const storageInitialStates = localStorage.getItem(QUIZ_LOGS_REDUCER_KEY)
   const initialStates: StateType[] = storageInitialStates
     ? JSON.parse(storageInitialStates)
