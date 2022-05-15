@@ -1,8 +1,6 @@
 import { VFC } from 'react'
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 
 type SortAnswerMainProps = {
   answers: string[]
@@ -23,7 +21,7 @@ const SortAnswerMain: VFC<SortAnswerMainProps> = ({ answers, setAnswers }) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="dropList">
           {(provided) => (
-            <List
+            <div
               className="droplist"
               {...provided.droppableProps}
               ref={provided.innerRef}
@@ -40,36 +38,38 @@ const SortAnswerMain: VFC<SortAnswerMainProps> = ({ answers, setAnswers }) => {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                     >
-                      <ListItem key={index}>
-                        <div
-                          style={{
-                            position: 'relative',
-                            borderRadius: 10,
-                            width: '100px',
-                            height: '65px',
-                            border: '1px solid gray',
-                            boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
-                          }}
-                        >
+                      <div key={index} className={'h-20 table'}>
+                        <div className={'table-cell align-middle'}>
                           <div
                             style={{
-                              position: 'absolute',
-                              top: '50%',
-                              left: '50%',
-                              transform: 'translate(-50%, -50%)',
-                              userSelect: 'none',
+                              position: 'relative',
+                              borderRadius: 10,
+                              width: '100px',
+                              height: '60px',
+                              border: '1px solid gray',
+                              boxShadow: '0 3px 4px rgba(0, 0, 0, 0.32)',
                             }}
                           >
-                            {answer}
+                            <div
+                              style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                userSelect: 'none',
+                              }}
+                            >
+                              {answer}
+                            </div>
                           </div>
                         </div>
-                      </ListItem>
+                      </div>
                     </div>
                   )}
                 </Draggable>
               ))}
               {provided.placeholder}
-            </List>
+            </div>
           )}
         </Droppable>
       </DragDropContext>
