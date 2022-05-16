@@ -29,15 +29,24 @@ const CircleCrossAnswerMain: VFC<CircleCrossAnswerMainProps> = ({
 
   const displayResult = () => {
     Swal.fire({
-      title: `お疲れ様でした！ あなたの点数は、100点満点中${Math.round(
+      title: `${Math.round(
         (100 / answerList.length) * states.correctCount,
-      )}点です。`,
-      cancelButtonText: '結果を保存しない',
+      )}点/100点`,
+      text: 'お疲れ様でした！引き続き精進しましょう！',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp',
+      },
+      icon: 'success',
+      showDenyButton: true,
+      denyButtonText: '結果を保存しない',
       confirmButtonText: '結果を保存する',
     }).then((result) => {
-      if (result.value) {
+      if (result.isConfirmed) {
         saveResult()
-      } else {
+      } else if (result.isDenied) {
         navigate(`/${language.toLowerCase()}`)
       }
     })
